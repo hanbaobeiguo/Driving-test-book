@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Visitor</string>
+    <string name="name_blank_fragment">空白页</string>
+    <string name="name_home_fragment">应用首页</string>
+    <string name="name_appoint_fragment">预约页面</string>
+    <string name="name_myAppoint_fragment">预约列表页面</string>
+    <string name="name_notice_fragment">预约列表页面</string>
+    <string name="name_me_fragment">我的页面</string>
+    <string name="name_message_fragment">消息页面</string>
+</resources>

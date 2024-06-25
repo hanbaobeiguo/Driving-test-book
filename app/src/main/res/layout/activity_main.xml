@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+  <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/viewPager1"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  </androidx.viewpager2.widget.ViewPager2>
+<!--底部导航栏-->
+    <RadioGroup
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/rg_bottom"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_home_selector"
+            android:text="首页"
+            android:checked="true"
+            android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/rb_exam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_exam_selector"
+            android:text="模拟考试"
+            android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/rb_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_test_selector"
+            android:text="考前练习"
+            android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/rb_question_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_question_bank_selector"
+            android:text="题库管理"
+            android:textSize="16sp" />
+        <RadioButton
+            android:id="@+id/rb_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_me_selector"
+            android:text="我的"
+            android:textSize="16sp" />
+    </RadioGroup>
+</RelativeLayout>
