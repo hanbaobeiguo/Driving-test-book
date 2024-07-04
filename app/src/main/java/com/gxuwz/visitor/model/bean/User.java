@@ -1,5 +1,6 @@
 package com.gxuwz.visitor.model.bean;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,13 +8,22 @@ import androidx.room.PrimaryKey;
 public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private int  phone;
+
+    @ColumnInfo(name = "phone")
+    private String  phone;
+
+    @ColumnInfo(name = "pwd")
     private String pwd;
+
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "sex")
     private String sex;
 
-    public User(int id, int phone, String pwd, String name, String sex) {
-        this.id = id;
+
+
+    public User(String phone, String pwd, String name, String sex) {
         this.phone = phone;
         this.pwd = pwd;
         this.name = name;
@@ -39,11 +49,11 @@ public class User {
         this.id = id;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

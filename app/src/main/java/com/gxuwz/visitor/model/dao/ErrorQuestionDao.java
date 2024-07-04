@@ -1,5 +1,6 @@
 package com.gxuwz.visitor.model.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -8,7 +9,7 @@ import androidx.room.Update;
 import com.gxuwz.visitor.model.bean.ErrorQuestion;
 
 import java.util.List;
-
+@Dao
 public interface ErrorQuestionDao {
     @Insert
     void insert(ErrorQuestion errorQuestion);
@@ -24,4 +25,7 @@ public interface ErrorQuestionDao {
 
     @Delete
     void delete(ErrorQuestion errorQuestion);
+    @Query("DELETE FROM error_question")
+    void deleteAll();
+
 }

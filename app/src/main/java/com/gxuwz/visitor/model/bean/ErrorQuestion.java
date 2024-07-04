@@ -3,8 +3,11 @@ package com.gxuwz.visitor.model.bean;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.List;
+
 @Entity(tableName = "error_question")
 public class ErrorQuestion {
+
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String question;
@@ -15,9 +18,14 @@ public class ErrorQuestion {
     private String item4;
     private String explains;
     private String url;
+    private Integer userId;
+    private String UserAnswer;
 
-    public ErrorQuestion(int id, String question, String answer, String item1, String item2, String item3, String item4, String explains, String url) {
-        this.id = id;
+    public ErrorQuestion() {
+    }
+
+    public ErrorQuestion(String userAnswer, String question, String answer, String item1, String item2, String item3, String item4, String explains, String url, Integer userId) {
+        this.UserAnswer = userAnswer;
         this.question = question;
         this.answer = answer;
         this.item1 = item1;
@@ -26,22 +34,22 @@ public class ErrorQuestion {
         this.item4 = item4;
         this.explains = explains;
         this.url = url;
+        this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "problem{" +
-                "id=" + id +
-                ", question='" + question + '\'' +
-                ", answer='" + answer + '\'' +
-                ", item1='" + item1 + '\'' +
-                ", item2='" + item2 + '\'' +
-                ", item3='" + item3 + '\'' +
-                ", item4='" + item4 + '\'' +
-                ", explains='" + explains + '\'' +
-                ", url='" + url + '\'' +
-                '}';
-    }
+    public ErrorQuestion(Question question,Integer userId) {
+        this.id = question.getId();
+        this.question = question.getQuestion();
+        this.answer = question.getAnswer();
+        this.item1 = question.getItem1();
+        this.item2 = question.getItem2();
+        this.item3 = question.getItem3();
+        this.item4 = question.getItem4();
+        this.explains = question.getExplains();
+        this.url = question.getUrl();
+        this.userId = userId;;
+    };
+
 
     public int getId() {
         return id;
@@ -114,4 +122,39 @@ public class ErrorQuestion {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getUserAnswer() {
+        return UserAnswer;
+    }
+
+    public void setUserAnswer(String userAnswer) {
+        UserAnswer = userAnswer;
+    }
+
+    @Override
+    public String toString() {
+        return "ErrorQuestion{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                ", item1='" + item1 + '\'' +
+                ", item2='" + item2 + '\'' +
+                ", item3='" + item3 + '\'' +
+                ", item4='" + item4 + '\'' +
+                ", explains='" + explains + '\'' +
+                ", url='" + url + '\'' +
+                ", userId=" + userId +
+                ", UserAnswer='" + UserAnswer + '\'' +
+                '}';
+    }
+
+
 }

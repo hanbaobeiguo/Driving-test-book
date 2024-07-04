@@ -5,14 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
-import androidx.viewpager.widget.PagerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.gxuwz.visitor.R;
 
 import java.util.List;
 
-public class ImagePagerAdapter extends PagerAdapter {
+public class ImagePagerAdapter extends RecyclerView.Adapter<ImagePagerAdapter.ImageViewHolder> {
 
     private Context context;
     private List<Integer> imageList;
@@ -24,27 +25,27 @@ public class ImagePagerAdapter extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.item_image, container, false);
-        ImageView imageView = view.findViewById(R.id.imageView);
-        imageView.setImageResource(imageList.get(position));
-        container.addView(view);
-        return view;
+    public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_image, parent, false);
+        return new ImageViewHolder(view);
     }
 
     @Override
-    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((View) object);
+    public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
+        holder.imageView.setImageResource(imageList.get(position));
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return imageList.size();
     }
 
-    @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view == object;
+    public static class ImageViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+
+        public ImageViewHolder(@NonNull View itemView) {
+            super(itemView);
+            imageView = itemView.findViewById(R.id.imageView);
+        }
     }
 }

@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
   <androidx.viewpager2.widget.ViewPager2
       android:id="@+id/viewPager1"
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
+      android:layout_height="650dp">
   </androidx.viewpager2.widget.ViewPager2>
 <!--底部导航栏-->
     <RadioGroup
+
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:id="@+id/rg_bottom"

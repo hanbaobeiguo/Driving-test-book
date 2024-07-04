@@ -10,8 +10,6 @@ import com.gxuwz.visitor.model.bean.User;
 
 import java.util.List;
 
-
-
 @Dao
 public interface UserDao {
     @Insert
@@ -20,10 +18,10 @@ public interface UserDao {
     @Query("SELECT * FROM user")
     List<User> getAllUsers();
 
-    @Query("SELECT * FROM user WHERE id = :userId")
-    User getUserById(int userId);
+    @Query("SELECT * FROM user WHERE phone = :phone")
+    User getUserByPhone(String phone);
 
-    @Update
+    @Update()
     void update(User user);
 
     @Delete

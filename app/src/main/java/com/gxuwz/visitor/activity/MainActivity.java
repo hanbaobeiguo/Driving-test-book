@@ -1,4 +1,4 @@
-package com.gxuwz.visitor;
+package com.gxuwz.visitor.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,8 +9,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
-import com.gxuwz.visitor.adapter.ImagePagerAdapter;
-import com.gxuwz.visitor.fragment.TestFragment;
+import com.gxuwz.visitor.R;
+import com.gxuwz.visitor.fragment.Test1Fragment;
 import com.gxuwz.visitor.fragment.BlankFragment;
 import com.gxuwz.visitor.fragment.HomeFragment;
 import com.gxuwz.visitor.fragment.MeFragment;
@@ -20,7 +20,7 @@ import com.gxuwz.visitor.fragment.ExamFragment;
 /**
  * 主页
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
    private static final int NUM_PAGES = 5;
    private ViewPager2 viewPager1;
 
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
         initAdapter();
         method();
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     //初始化view
     private void initView() {
         viewPager1=findViewById(R.id.viewPager1);
-
         rg_bottom=findViewById(R.id.rg_bottom);
     }
 
@@ -52,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     //初始化adapter
     private void initAdapter() {
         viewPager1.setAdapter(new PagerAdapter(this));
-
     }
 
 
@@ -135,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment=new ExamFragment();
                     break;
                 case 2:
-                    fragment=new TestFragment();
+                    fragment=new BlankFragment();
                     break;
                 case 3:
                     fragment=new QuestionBankFragment();
@@ -143,8 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 case 4:
                     fragment=new MeFragment();
                     break;
-                default:
-                    fragment=new BlankFragment();
+
 
             }
             return fragment;

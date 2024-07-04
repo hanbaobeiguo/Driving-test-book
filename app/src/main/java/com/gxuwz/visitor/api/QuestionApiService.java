@@ -1,6 +1,5 @@
 package com.gxuwz.visitor.api;
 
-import com.gxuwz.visitor.model.vo.AnswerResponse;
 import com.gxuwz.visitor.model.vo.QuestionResponse;
 
 import retrofit2.Call;
@@ -15,8 +14,5 @@ public interface QuestionApiService {
             @Query("model") String model,
             @Query("testType") String testType
     );
-    @GET("jztk/answers")
-    Call<AnswerResponse> getAnswers(
-            @Query("key") String apiKey
-    );
+
 }
